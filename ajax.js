@@ -47,3 +47,67 @@ let ajaxRequest = (url,method,data,callback) => {
     request.send(data);
 
 }
+
+//makes a request to the api for the weather
+// getWeatherList = () =>{
+
+//     fetch("GET https://api.thenewsapi.com/v1/news/top?api_token=yJvISyDAXuLVmccVJhTV8FXBB5Ed7eQL3mgoPnos&locale=us&limit=3")
+//       .then(response => response.json())
+//       .then(addtoList)
+//       .then(getCatList);
+// }
+
+var requestOptions = {
+    method: 'GET'
+};
+
+var params = {
+    api_token: 'yJvISyDAXuLVmccVJhTV8FXBB5Ed7eQL3mgoPnos',
+    categories: document.getElementById("activeInfo"),
+    local: document.getElementById("location"),
+    title: //get this from the api samehow
+    url: //get this from the api samehow
+    limit: '3'
+};
+
+var esc = encodeURIComponent;
+var query = Object.keys(params)
+    .map(function(k) {return esc(k) + '=' + esc(params[k]);})
+    .join('&');
+
+    fetch("GET https://api.thenewsapi.com/v1/news/top?api_token=yJvISyDAXuLVmccVJhTV8FXBB5Ed7eQL3mgoPnos&locale=" + local +"&limit=" + limit)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+
+//populates the dropdown select item with the list of locations
+addtoList = (response) =>{
+    
+    //get the list of property names from the json object
+    let lecaltionList = Object.keys(response.message);
+    
+  
+    //create a select option for each item in the breedlist array
+    const select = document.getElementById("loaction");
+    breedlist.forEach(b =>{
+        const optionElem = document.createElement("option");
+        optionElem.value = b;
+        optionElem.text = b;
+        select.appendChild(optionElem);
+    });
+}
+
+//event handler for the dropdown list which triggers request to api for selected location
+handleChange = (e) =>{
+    let loc = e.target.value;
+
+    let url = "https://dog.ceo/api/breed/" + loc + "/images/random"
+    fetch(url)
+    .then(response=> response.json())
+        .then(showDog);
+
+}
+
+
+//catagories going to have to get the value from the drop down list selected
+//local will need to get the value of local radio button checked all should try and be pulled from the dom
