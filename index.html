@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your News Headlines</title>
+<link rel="stylesheet" href="style.css">
+    <script src="ajax.js"></script>
+</head>
+<body>
+  <div class="header">
+    <h1>Your News Headlines</h1>
+  </div>
+  <div class="container">
+    <div class="topics">
+      <h2>Current topics:</h2>
+            <body onload="getDataAjax()"></body>
+            <div id=data class="data-container"></div>
+
+
+            <!-- <div class="container">
+              <h3>Chose which topic you want to view:</h3>
+              <button  onclick='getActiveStatus()'>Add Topics </button> <br>
+              <div id=activeInfo class="data-container"></div>
+          </div> -->
+
+
+            <!-- <button>Add Topics</button> -->
+            
+        </div>
+        <button onclick="getActiveStatus()">Add Topics////</button> <br>
+        <button>Remove Topics</button>
+        <div id=activeInfo class="data-container"></div>
+
+    </div>
+    <div class="country">
+      <h2>Selected country:</h2>
+      <select>
+        <option selected>New Zealand (NZ)</option>
+      </select>
+    </div>
+  </div>
+</body>
+</html>
+
+<!-- add topics has to show a list of the entries with ative states of 0  -->
+<!-- have then be a list of radio buttons with then you click them and say add topic the status is changed to active and then they are automatically added to the current topic list.  -->
+

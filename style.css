@@ -1,0 +1,43 @@
+/* Style for Your News Headlines page */
+body {
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  background-color: orange;
+  padding: 10px;
+  text-align: center;
+}
+
+.header h1 {
+  color: white;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.topics,
+.country {
+  background-color: white;
+  /* border: 1px solid blue; */
+  padding: 10px;
+}
+
+.topics button {
+  margin-top: 10px;
+}
+
+select {
+  width: 100%;
+}
+
+body { font-family: Arial, sans-serif; }
+  .header { background-color: orange; padding: 10px; text-align: center; }
+  .header h1 { color: white; }
+  .container { display: flex; justify-content: space-between; padding: 20px; }
+  .topics, .country { background-color: white;  padding: 10px; }
+  .topics button { margin-top: 10px; }
+  select { width: 100%; }
